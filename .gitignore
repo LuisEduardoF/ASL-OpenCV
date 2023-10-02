@@ -7,3 +7,5 @@
 /y_test.npy
 /y_train.npy
 /data
+.gitignore
+/__pycache__
