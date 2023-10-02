@@ -1,8 +1,8 @@
 # ASL-OpenCV
 
-## ASL Alphabet Recognizer with Deep Learning Neural Network
+## ASL Alphabet Recognizer with a Multilayer Perceptron Neural Network
 
-This project is an implementation of a deep learning neural network for recognizing the American Sign Language (ASL) alphabet using computer vision techniques. The model is trained to recognize hand gestures corresponding to each letter of the ASL alphabet.
+This project is an implementation of a neural network for recognizing the American Sign Language (ASL) alphabet using computer vision techniques. The model is trained to recognize hand gestures corresponding to each letter of the ASL alphabet.
 
 ## Dataset
 
@@ -12,7 +12,7 @@ The dataset used in this project is the "Synthetic ASL Alphabet" dataset, which 
 
 - **Contents**: The dataset contains a diverse set of hand gesture images representing the 26 letters of the ASL alphabet, from 'A' to 'Z'. Each letter is associated with multiple images showcasing different hand poses and variations. The images are labeled with their corresponding alphabet letters.
 
-- **Usage**: In this project, we use the "Synthetic ASL Alphabet" dataset for training our deep learning neural network. The dataset provides a sufficient variety of hand gestures to train a robust model for ASL alphabet recognition.
+- **Usage**: In this project, we use the "Synthetic ASL Alphabet" dataset for training our neural network. The dataset provides a sufficient variety of hand gestures to train a robust model for ASL alphabet recognition.
 
 ![ASL Alphabet](alphabet.jpg)
 <em>ASL Alphabet, by @LexSet</em>
@@ -42,7 +42,7 @@ Hand Landmarks: The project uses the MediaPipe library to extract hand landmarks
 
 ## Data Architecture
 - **Data Representation**: For each image in the dataset, the extracted hand landmarks are used to create a feature vector. The feature vector represents the spatial coordinates of these landmarks. Each landmark's (x, y, z) coordinates become individual elements in the feature vector.
-- **Data Organization**: The feature vectors from all images are organized into a database-like structure, where each row corresponds to a sample image, and each column represents the coordinates of a specific hand landmark. This structured dataset is used for training and testing the deep learning model.
+- **Data Organization**: The feature vectors from all images are organized into a database-like structure, where each row corresponds to a sample image, and each column represents the coordinates of a specific hand landmark. This structured dataset is used for training and testing the neural net.
 
 ## Image Example
 ![Example](images/predicted.png) <br>
