@@ -45,7 +45,7 @@ Hand Landmarks: The project uses the MediaPipe library to extract hand landmarks
 - **Data Organization**: The feature vectors from all images are organized into a database-like structure, where each row corresponds to a sample image, and each column represents the coordinates of a specific hand landmark. This structured dataset is used for training and testing the deep learning model.
 
 ## Image Example
-![Example](image/predicted.png)
+![Example](images/predicted.png) <br>
+*Image of a correct prediction example*
+
 - For a more detailed usage Example, see the test notebook
-
-
