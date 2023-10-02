@@ -3,6 +3,8 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
+import torchviz
+from IPython.display import display
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import LabelEncoder
 
@@ -25,7 +27,7 @@ class AlphabetModel():
         self.nn = NeuralNet(self.input_size, self.hidden_size, self.output_size)
     
         
-    def fit(self, num_epoch=100, batch_size=64):
+    def fit(self, num_epoch=200, batch_size=64):
         criterion = nn.CrossEntropyLoss()  # Mean Squared Error loss (you can choose an appropriate loss function)
         optimizer = optim.Adam(self.nn.parameters(), lr=0.001)  # Adam optimizer
         
@@ -45,7 +47,7 @@ class AlphabetModel():
 
         return range(num_epoch), losses
     
-    def score(self, batch_size=512):
+    def score(self, batch_size=64):
         # Evaluation
         self.nn.eval()
         correct = 0
@@ -62,7 +64,14 @@ class AlphabetModel():
 
         accuracy = 100 * correct / total
         print(f'Test Accuracy: {accuracy:.2f}%')
-                
+    
+    def __repr__(self):
+       # Create a dummy input tensor with the same shape as your actual input data
+       dummy_input = torch.randn(1, 63)
+       # Use torchviz to visualize the model
+       display(torchviz.make_dot(self.nn(dummy_input), params=dict(self.nn.named_parameters())))
+       
+       return ""                 
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(NeuralNet, self).__init__()
