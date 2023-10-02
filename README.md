@@ -48,4 +48,9 @@ Hand Landmarks: The project uses the MediaPipe library to extract hand landmarks
 ![Example](images/predicted.png) <br>
 *Image of a correct prediction example*
 
-- For a more detailed usage Example, see the test notebook
+## Git Repo Organization
+- *models.py*: File for saving the models for train, test and prediction of the NN.
+- *test.ipynb*: Notebook for exemplifying the main usage of the application.
+- *analysis.ipynb*: Notebook with preprocessing and analysis of the dataset created.
+- *dataloader.ipynb*: Notebook resposible for handling the image data to a DataFrame format.
+- *main.py*: Notebook with the training/test of a trained NN, with test accuracy of 75.99%
