@@ -8,4 +8,4 @@
 /y_train.npy
 /data
 .gitignore
-/__pycache__
+__pycache__
